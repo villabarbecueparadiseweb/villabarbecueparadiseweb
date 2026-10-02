@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Villa Barbecue Paradise — Carte</title>
+<meta name="description" content="Villa Barbecue Paradise : combos grillades de 1 à 10 personnes, poissons braisés, cocktails et boissons.">
+<meta name="theme-color" content="#0c0907">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0c0907;--card:#16110d;--line:#2b211a;--ember:#ff5a1f;--gold:#f2b457;--txt:#f4ece3;--mut:#a89888}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--txt);font:400 16px/1.6 Manrope,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.05}
+svg.i{width:1em;height:1em;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;vertical-align:-.12em}
+#load{position:fixed;inset:0;background:var(--bg);z-index:99;display:grid;place-items:center;transition:opacity .7s,visibility .7s}
+#load.off{opacity:0;visibility:hidden}#load svg{width:64px;height:64px;color:var(--ember);animation:fl 1s infinite alternate}
+@keyframes fl{to{transform:scale(1.2) rotate(-6deg);filter:drop-shadow(0 0 18px var(--ember))}}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--ember),var(--gold));z-index:60}
+#glow{position:fixed;width:360px;height:360px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(255,90,31,.16),transparent 65%);transform:translate(-50%,-50%);z-index:1;transition:opacity .3s}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:16px 5vw;transition:.4s}
+nav.s{background:rgba(12,9,7,.85);backdrop-filter:blur(14px);padding:10px 5vw;border-bottom:1px solid var(--line)}
+.logo{font:800 1.15rem 'Playfair Display';letter-spacing:.04em;color:var(--txt);text-decoration:none;display:flex;gap:8px;align-items:center}.logo svg{color:var(--ember)}
+nav ul{display:flex;gap:28px;list-style:none}nav a{color:var(--mut);text-decoration:none;font-weight:500;font-size:.92rem;transition:.3s}nav a:hover,nav a.on{color:var(--gold)}
+.btn{display:inline-flex;gap:8px;align-items:center;padding:14px 28px;border-radius:99px;font-weight:700;text-decoration:none;border:1px solid var(--ember);color:#fff;background:var(--ember);cursor:pointer;transition:.35s;font-family:inherit;font-size:.95rem;position:relative;overflow:hidden}
+.btn:hover{box-shadow:0 10px 40px rgba(255,90,31,.45);transform:translateY(-3px)}.btn.g{background:transparent;color:var(--txt);border-color:var(--line)}.btn.g:hover{border-color:var(--gold);color:var(--gold);box-shadow:none}
+#bg{position:absolute;inset:0;width:100%;height:100%}
+.hero{min-height:100vh;display:grid;place-items:center;text-align:center;position:relative;padding:120px 5vw 80px;background:radial-gradient(ellipse at 50% 110%,#3a1405,transparent 60%)}
+.hero>div{position:relative;z-index:2}.tag{color:var(--gold);letter-spacing:.35em;text-transform:uppercase;font-size:.75rem;display:inline-flex;gap:10px;align-items:center}
+.hero h1{font-size:clamp(3rem,11vw,9rem);font-weight:800;margin:18px 0}.hero h1 em{display:block;font-style:italic;font-weight:600;background:linear-gradient(100deg,var(--gold),var(--ember),var(--gold));background-size:200%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sh 5s linear infinite}
+@keyframes sh{to{background-position:200%}}
+.w{display:inline-block;overflow:hidden;vertical-align:top}.w span{display:inline-block;transform:translateY(110%);animation:up 1s cubic-bezier(.2,.8,.2,1) forwards}@keyframes up{to{transform:none}}
+.hero p{max-width:560px;margin:0 auto 34px;color:var(--mut);font-size:1.1rem}.hero .row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.scroll{position:absolute;bottom:26px;left:50%;z-index:2;color:var(--mut);animation:bn 1.8s infinite}@keyframes bn{50%{transform:translate(-50%,10px)}}
+.mq{border-block:1px solid var(--line);overflow:hidden;padding:18px 0;background:#100c09;position:relative;z-index:2}.mq div{display:flex;gap:50px;width:max-content;animation:mq 30s linear infinite;font:italic 600 1.5rem 'Playfair Display';color:var(--mut)}.mq b{color:var(--ember);font-weight:400}
+@keyframes mq{to{transform:translateX(-50%)}}
+section{padding:110px 5vw;position:relative;z-index:2;max-width:1300px;margin:auto}
+.hd{text-align:center;margin-bottom:50px}.hd h2{font-size:clamp(2.2rem,6vw,4.2rem);margin:10px 0 14px}.hd p{color:var(--mut);max-width:560px;margin:auto}
+.rv{opacity:0;transform:translateY(40px);transition:1s cubic-bezier(.2,.8,.2,1)}.rv.in{opacity:1;transform:none}
+.sw{display:flex;justify-content:center;margin-bottom:44px}.tg{display:flex;background:var(--card);border:1px solid var(--line);border-radius:99px;padding:5px;position:relative}
+.tg button{position:relative;z-index:2;background:none;border:0;color:var(--mut);padding:12px 26px;border-radius:99px;font:700 .92rem Manrope;cursor:pointer;transition:.3s;display:flex;gap:8px;align-items:center}.tg button.on{color:#fff}
+.pill{position:absolute;top:5px;bottom:5px;border-radius:99px;background:var(--ember);transition:.45s cubic-bezier(.3,.9,.3,1);z-index:1}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px;perspective:1000px}
+.cb{background:linear-gradient(160deg,var(--card),#0f0b08);border:1px solid var(--line);border-radius:22px;padding:28px;position:relative;overflow:hidden;transition:transform .2s,border-color .4s;transform-style:preserve-3d;display:flex;flex-direction:column}
+.cb::before{content:"";position:absolute;inset:0;background:radial-gradient(260px circle at var(--x,50%) var(--y,0),rgba(255,90,31,.22),transparent 60%);opacity:0;transition:.4s}.cb:hover{border-color:var(--ember)}.cb:hover::before{opacity:1}
+.cb>*{position:relative}.n{font:800 4.5rem 'Playfair Display';color:transparent;-webkit-text-stroke:1px var(--ember);line-height:1}.pp{color:var(--gold);display:flex;gap:6px;align-items:center;font-weight:700;margin:6px 0 16px}
+.cb ul{list-style:none;margin-bottom:22px;flex:1}.cb li{font-size:.88rem;color:var(--mut);padding:5px 0;border-bottom:1px dashed var(--line);display:flex;gap:9px;align-items:center}.cb li svg{color:var(--ember);flex:none}
+.pr{font:800 2rem 'Playfair Display';margin-bottom:14px}.pr small{font:500 .8rem Manrope;color:var(--mut)}.cb .btn{justify-content:center;padding:12px}
+.ft{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center;background:linear-gradient(120deg,#2a0f05,var(--card));border:1px solid var(--line);border-radius:26px;padding:44px;margin-top:20px}.ft h3{font-size:2.2rem}.ft .pr{text-align:right;font-size:3rem}
+.tabs{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:34px}.tabs button{background:none;border:1px solid var(--line);color:var(--mut);padding:10px 22px;border-radius:99px;cursor:pointer;font:700 .88rem Manrope;transition:.3s}.tabs button.on,.tabs button:hover{border-color:var(--gold);color:var(--gold)}
+.dr{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}.di{display:flex;justify-content:space-between;gap:14px;padding:18px 22px;background:var(--card);border:1px solid var(--line);border-radius:16px;animation:pop .5s both;transition:.3s}.di:hover{border-color:var(--ember);transform:translateX(6px)}
+@keyframes pop{from{opacity:0;transform:translateY(16px)}}.di b{color:var(--gold);white-space:nowrap}.tabs.sub button{padding:7px 16px;font-size:.8rem}.di small{display:block;color:var(--mut);font-weight:400;font-size:.8rem;margin-top:2px}.di em{font-style:normal;color:var(--mut);font-size:.7rem;margin-left:6px}.note{text-align:center;color:var(--mut);font-size:.85rem;margin-top:26px;display:flex;gap:8px;justify-content:center;align-items:center}
+footer{text-align:center;padding:70px 5vw 40px;border-top:1px solid var(--line);color:var(--mut);position:relative;z-index:2}footer h3{font-size:2.4rem;color:var(--txt);margin-bottom:8px}footer a{color:var(--gold)}
+@media(max-width:800px){nav ul{display:none}.ft{grid-template-columns:1fr;padding:30px}.ft .pr{text-align:left}section{padding:80px 5vw}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv,.w span{opacity:1;transform:none}}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="flame" viewBox="0 0 24 24"><path d="M12 2c1 4 5 6 5 11a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-4-1-6 1-10z"/></symbol>
+<symbol id="check" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></symbol>
+<symbol id="users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-4 3-6 6.5-6s6.500 2 6.500 6M16 4.500a3.500 3.500 0 0 1 0 7M21.500 20c0-3-1.500-5-4-5.700"/></symbol>
+<symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+<symbol id="down" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+<symbol id="glass" viewBox="0 0 24 24"><path d="M4 4h16l-8 9zM12 13v7M8 20h8"/></symbol>
+<symbol id="phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.500 1.500a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+<symbol id="info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v.1M12 11v5"/></symbol>
+<symbol id="fish" viewBox="0 0 24 24"><path d="M2 12c4-6 11-6 15 0-4 6-11 6-15 0zM17 12l5-4v8zM7 11v.1"/></symbol>
+</defs></svg>
+<div id="load"><svg class="i"><use href="#flame"/></svg></div><div id="bar"></div><div id="glow"></div>
+<nav id="nav"><a class="logo" href="#top"><svg class="i"><use href="#flame"/></svg>VILLA BARBECUE PARADISE</a>
+<ul><li><a href="#combos">Combos</a></li><li><a href="#braise">Poissons</a></li><li><a href="#bar-sec">Bar</a></li><li><a href="#contact">Contact</a></li></ul></nav>
+
+<header class="hero" id="top"><canvas id="bg"></canvas><div>
+<span class="tag"><svg class="i"><use href="#flame"/></svg> Grillades au feu de braise</span>
+<h1><span class="w"><span style="animation-delay:.3s">Villa</span></span> <span class="w"><span style="animation-delay:.45s">Barbecue</span></span><em><span class="w"><span style="animation-delay:.7s">Paradise</span></span></em></h1>
+<p>Poulet, bœuf, porc et mouton grillés à la braise, servis en combos généreux à partager. Du dîner en solo au grand banquet de dix.</p>
+<div class="row"><a class="btn" href="#combos">Voir les combos <svg class="i"><use href="#arrow"/></svg></a><a class="btn g" href="#bar-sec">Menu du bar</a></div></div>
+<svg class="i scroll" style="font-size:28px"><use href="#down"/></svg></header>
+<div class="mq"><div id="mq"></div></div>
+
+<section id="combos"><div class="hd rv"><span class="tag">Formules signature</span><h2>Nos Combos</h2><p>Chaque combo contient la même sélection complète, ajustée à la taille de votre table. Ajoutez le mouton pour passer au niveau supérieur.</p></div>
+<div class="sw rv"><div class="tg" id="tg"><span class="pill"></span><button class="on" data-m="0">Classique</button><button data-m="1"><svg class="i"><use href="#flame"/></svg>Avec mouton</button></div></div>
+<div class="grid" id="grid"></div></section>
+
+<section id="braise"><div class="ft rv"><div><span class="tag"><svg class="i"><use href="#fish"/></svg> Autres plats</span><h3 style="margin:10px 0">Poissons braisés</h3><p style="color:var(--mut)">Tilapia, sosso ou sol, braisés à point et servis chauds.</p></div><div class="pr"><span data-c="15000">0</span> <small>FCFA</small></div></div></section>
+
+<section id="bar-sec"><div class="hd rv"><span class="tag">Menu du bar</span><h2>Cocktails &amp; Boissons</h2></div>
+<div class="tabs rv" id="tabs"></div><div class="tabs sub" id="sub"></div><p class="note" id="leg" style="margin:0 0 18px">T = tournée · B = bouteille (FCFA)</p><div class="dr" id="dr"></div>
+<p class="note"><svg class="i"><use href="#info"/></svg>Les boissons alcoolisées sont servies uniquement aux adultes de 18 ans et plus.</p></section>
+
+<footer id="contact"><h3>Réservez votre table</h3><p>Commandez ou réservez directement par appel ou WhatsApp.</p><br><a class="btn" id="call" href="#"><svg class="i"><use href="#phone"/></svg>Nous contacter</a><br><br><small>Carte sujette à modification sans préavis · © Villa Barbecue Paradise</small></footer>
+
+<script>
+/* ===== CONFIG : modifiez ici ===== */
+const PHONE="2250717070532"; // numéro WhatsApp, format international sans +
+const P=[[20,30],[35,49],[55,69],[70,89],[90,109],[110,129],[130,149],[150,169],[170,189],[190,209]].map(a=>a.map(v=>v*1000));
+const ING=["Cuisses de poulet","Ailes de poulet","Saucisse de bœuf","Côtes de bœuf","Côtes de porc (au choix)","Œufs","Pommes de terre","Maïs (selon la saison)"];
+const DRINKS={
+"Cocktails":{
+"Alcoolisés":[["Mojito","Virgin / Orange / Passion / Ananas / Bissap, Rhum",7500],["Long Island","Vodka, gin, tequila, rhum, citron, coca",8500],["Blue Lagon","Vodka, curaçao bleu, passion, orange, citron",6500],["Pink Lemon","Citron, rhum, grenadine, citron",6500],["Cosmopolitano","Vodka, cointreau, cranberry, citron",6500],["Daiquiri","Rhum, citron vert, sucre de canne",5500],["Margarita","Tequila, cointreau, citron",6500],["Vodka Daysi","Vodka, citron, grenadine, soda",6500],["Gin Frizz","Gin, sucre de canne, citron, sprite",6500],["Sexy Bailey's","Bailey's, gin, citron",6500],["Mai Tai","Rhum blanc, rhum ambré, triple sec, sucre de canne, citron",7500]],
+"Virgins":[["Mojito","Virgin / Orange / Passion / Ananas / Bissap",5000],["Hawaï","Multifruits (ananas, orange, pomme...), sirop citron / grenadine / menthe",5000],["Bora Bora","Jus ananas, jus passion, jus citron, grenadine, fruits de saison",5000],["Pina Colada","Jus ananas, lait de coco, sirop de canne",5000],["The Pêche","Pêche, citron vert, sprite, sucre",5000],["More to Come","Ananas, mangue, passion, fraise, lait",5000],["Golden Garden","Mangue, orange, grenadine",5000],["Milkshake","Oreo, kinder bueno, chocolat, fraise",5000]],
+"Signature":[["Diamant Bleu","Rhum, curaçao bleu, passion, orange, citron",7500],["Soleil","Gin, menthe, citron vert, jus d'orange",7500]]},
+"Spiritueux":{
+"Whisky":[["Jack Daniel's Single Barrel",6000,40000],["Jack Daniel's",5000,35000],["Jack Daniel's Gentleman",7000,45000],["Johnny Walker — Red Label",4000,25000],["Johnny Walker — Black Label",5000,35000],["Double Black",6000,40000],["Chivas",6000,40000],["Clan Campbell",4000,25000]],
+"Rhum":[["Diplomatico",10000,65000],["Havana Club",5000,35000],["Bacardi",5000,35000],["Saint James",4000,25000],["Rhum Café",4000,25000]],
+"Cognac":[["Hennessy VS",7000,45000],["Remy Martin VSOP",7000,45000],["Martell VS",7000,45000],["Camus VSOP",7000,45000]],
+"Gin":[["Bombay Blue Sapphire",4000,30000],["Citadelle",3000,25000],["Gordon's",4000,25000]],
+"Vodka & Tequila":[["Grey Goose",6000,40000],["Absolut",5000,30000],["Ciroc",6000,40000],["Smirnoff",4000,20000],["Omelca",5000,25000],["Patron Silver",5000,35000]],
+"Liqueurs & Crèmes":[["Jagermeister",5000,35000],["Pastis",5000,30000],["Baileys",5000,30000],["Martini",4000,25000],["Amarula",5000,35000]],
+"Shots":[["1 Shot",1000],["5 Shots",3000]]},
+"Softs":{
+"Sodas":[["Redbull",3000],["Sanbitter",2000],["Cody's energy",2000],["Coca cola / Sprite / Orangina / Ivorio / Fanta",1500],["Malta",2000]],
+"Eaux":[["Eau Minérale",1500],["Perrier",2500],["San Pellegrino",2000],["Volvic",2500]],
+"Bières":[["Heineken",2000],["Beaufort",2000],["Desperados",2000],["Guinness",2000],["Doppel Munich",1500],["Budweiser",2000],["Corona",2000],["Cody's bière",2000]],
+"Jus & Boissons chaudes":[["Jus naturel",2000],["Jus",1500],["Capucinno",2000],["Thé",1000],["Expresso",1500],["Café au lait",2000]]}};
+/* ================================= */
+const $=s=>document.querySelector(s),f=n=>n.toLocaleString('fr-FR').replace(/\s|\u202f/g,'.');
+const call=$('#call');call.href=`https://wa.me/${PHONE}`;
+addEventListener('load',()=>setTimeout(()=>$('#load').classList.add('off'),700));
+$('#mq').innerHTML=Array(2).fill(["Poulet","Bœuf","Porc","Mouton","Poissons braisés","Cocktails"].map(t=>`${t} <b>✦</b>`).join(' ')).join(' ').repeat(2);
+let mut=0;const g=$('#grid');
+g.innerHTML=P.map((p,i)=>`<article class="cb rv" style="transition-delay:${(i%4)*.08}s"><div class="n">${String(i+1).padStart(2,'0')}</div><div class="pp"><svg class="i"><use href="#users"/></svg>Pour ${i+1} personne${i?'s':''}</div><ul>${ING.map(x=>`<li><svg class="i" style="font-size:14px"><use href="#check"/></svg>${x}</li>`).join('')}</ul><div class="pr"><span data-p="${i}">${f(p[0])}</span> <small>FCFA</small></div><a class="btn g" target="_blank" rel="noopener" data-o="${i}">Commander <svg class="i"><use href="#arrow"/></svg></a></article>`).join('');
+function cnt(el,to,d=900){const from=+el.dataset.v||0;el.dataset.v=to;const t0=performance.now();(function s(t){const k=Math.min(1,(t-t0)/d),e=1-Math.pow(1-k,3);el.textContent=f(Math.round(from+(to-from)*e));k<1&&requestAnimationFrame(s)})(t0)}
+function upd(){document.querySelectorAll('[data-p]').forEach(e=>cnt(e,P[e.dataset.p][mut],600));document.querySelectorAll('[data-o]').forEach(a=>{const i=+a.dataset.o;a.href=`https://wa.me/${PHONE}?text=${encodeURIComponent(`Bonjour, je souhaite commander le Combo ${i+1} (${i+1} pers.) ${mut?'avec mouton':'classique'} - ${f(P[i][mut])} FCFA`)}`})}
+function pill(b){const p=$('.pill');p.style.left=b.offsetLeft+'px';p.style.width=b.offsetWidth+'px'}
+document.querySelectorAll('#tg button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#tg button').forEach(x=>x.classList.remove('on'));b.classList.add('on');mut=+b.dataset.m;pill(b);upd()});
+addEventListener('load',()=>pill($('#tg .on')));addEventListener('resize',()=>pill($('#tg .on')));upd();
+g.querySelectorAll('.cb').forEach(c=>{c.onmousemove=e=>{const r=c.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;c.style.setProperty('--x',x+'px');c.style.setProperty('--y',y+'px');c.style.transform=`rotateY(${(x/r.width-.5)*8}deg) rotateX(${-(y/r.height-.5)*8}deg) translateY(-6px)`};c.onmouseleave=()=>c.style.transform=''});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');e.target.querySelectorAll('[data-c]').forEach(x=>cnt(x,+x.dataset.c,1400));io.unobserve(e.target)}}),{threshold:.15});document.querySelectorAll('.rv').forEach(e=>io.observe(e));
+const keys=Object.keys(DRINKS);let cur=keys[0];
+function tb(box,list,fn){box.innerHTML=list.map((k,i)=>`<button class="${i?'':'on'}">${k}</button>`).join('');box.querySelectorAll('button').forEach(b=>b.onclick=()=>{box.querySelectorAll('button').forEach(x=>x.classList.remove('on'));b.classList.add('on');fn(b.textContent)})}
+function row(d,i){const sp=d.length==3&&typeof d[1]=='number';const ds=d.length==3&&!sp;return `<div class="di" style="animation-delay:${i*.05}s"><span>${d[0]}${ds?`<small>${d[1]}</small>`:''}</span><b>${sp?`<em>T</em> ${f(d[1])} <em>B</em> ${f(d[2])}`:f(d[d.length-1])}</b></div>`}
+function show(sub){$('#dr').innerHTML=DRINKS[cur][sub].map(row).join('')}
+function main(k){cur=k;const subs=Object.keys(DRINKS[k]);tb($("#sub"),subs,show);show(subs[0]);$('#leg').style.display=k=='Spiritueux'?'block':'none'}
+tb($("#tabs"),keys,main);main(cur);
+const nav=$('#nav'),links=[...document.querySelectorAll('nav a[href^="#"]:not(.logo)')];
+addEventListener('scroll',()=>{const h=document.documentElement;$('#bar').style.width=scrollY/(h.scrollHeight-innerHeight)*100+'%';nav.classList.toggle('s',scrollY>60);links.forEach(a=>{const s=$(a.hash);a.classList.toggle('on',s.getBoundingClientRect().top<innerHeight/2&&s.getBoundingClientRect().bottom>innerHeight/2)})},{passive:true});
+const gl=$('#glow');addEventListener('mousemove',e=>{gl.style.left=e.clientX+'px';gl.style.top=e.clientY+'px'});
+/* braises animées */
+const cv=$('#bg'),x=cv.getContext('2d');let W,H,ps=[];function rs(){W=cv.width=cv.offsetWidth;H=cv.height=cv.offsetHeight}rs();addEventListener('resize',rs);
+const mk=()=>({x:Math.random()*W,y:H+10,r:Math.random()*2.2+.5,v:Math.random()*1.2+.4,d:Math.random()*2*Math.PI,a:Math.random()*.7+.3});
+for(let i=0;i<70;i++){const p=mk();p.y=Math.random()*H;ps.push(p)}
+(function a(){x.clearRect(0,0,W,H);ps.forEach((p,i)=>{p.y-=p.v;p.d+=.02;p.x+=Math.sin(p.d)*.6;p.a-=.0015;if(p.y<-10||p.a<=0)ps[i]=mk();x.beginPath();x.arc(p.x,p.y,p.r,0,7);x.fillStyle=`rgba(255,${100+p.r*30|0},40,${p.a})`;x.shadowBlur=12;x.shadowColor='#ff5a1f';x.fill()});requestAnimationFrame(a)})();
+</script></body></html>
