@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Villa Barbecue Paradise — Carte</title> 
+<title>Villa Barbecue Paradise — Carte</title>
 <meta name="description" content="Villa Barbecue Paradise : combos grillades de 1 à 10 personnes, poissons braisés, cocktails et boissons.">
 <meta name="theme-color" content="#0c0907">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,6 +45,7 @@ section{padding:110px 5vw;position:relative;z-index:2;max-width:1300px;margin:au
 .cb>*{position:relative}.n{font:800 4.5rem 'Playfair Display';color:transparent;-webkit-text-stroke:1px var(--ember);line-height:1}.pp{color:var(--gold);display:flex;gap:6px;align-items:center;font-weight:700;margin:6px 0 16px}
 .cb ul{list-style:none;margin-bottom:22px;flex:1}.cb li{font-size:.88rem;color:var(--mut);padding:5px 0;border-bottom:1px dashed var(--line);display:flex;gap:9px;align-items:center}.cb li svg{color:var(--ember);flex:none}
 .pr{font:800 2rem 'Playfair Display';margin-bottom:14px}.pr small{font:500 .8rem Manrope;color:var(--mut)}.cb .btn{justify-content:center;padding:12px}
+.pm{display:flex;gap:8px;align-items:center;color:var(--gold);font-weight:700;font-size:.92rem;margin:-6px 0 18px}.pm svg{color:var(--ember)}.pm b{font:800 1.4rem 'Playfair Display';color:var(--txt)}.pm small{font:500 .75rem Manrope;color:var(--mut)}.ob{display:grid;grid-template-columns:1fr 1fr;gap:8px}.cb .ob .btn{padding:11px 6px;font-size:.8rem}
 .ft{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center;background:linear-gradient(120deg,#2a0f05,var(--card));border:1px solid var(--line);border-radius:26px;padding:44px;margin-top:20px}.ft h3{font-size:2.2rem}.ft .pr{text-align:right;font-size:3rem}
 .tabs{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:34px}.tabs button{background:none;border:1px solid var(--line);color:var(--mut);padding:10px 22px;border-radius:99px;cursor:pointer;font:700 .88rem Manrope;transition:.3s}.tabs button.on,.tabs button:hover{border-color:var(--gold);color:var(--gold)}
 .dr{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}.di{display:flex;justify-content:space-between;gap:14px;padding:18px 22px;background:var(--card);border:1px solid var(--line);border-radius:16px;animation:pop .5s both;transition:.3s}.di:hover{border-color:var(--ember);transform:translateX(6px)}
@@ -77,7 +78,6 @@ footer{text-align:center;padding:70px 5vw 40px;border-top:1px solid var(--line);
 <div class="mq"><div id="mq"></div></div>
 
 <section id="combos"><div class="hd rv"><span class="tag">Formules signature</span><h2>Nos Combos</h2><p>Chaque combo contient la même sélection complète, ajustée à la taille de votre table. Ajoutez le mouton pour passer au niveau supérieur.</p></div>
-<div class="sw rv"><div class="tg" id="tg"><span class="pill"></span><button class="on" data-m="0">Classique</button><button data-m="1"><svg class="i"><use href="#flame"/></svg>Avec mouton</button></div></div>
 <div class="grid" id="grid"></div></section>
 
 <section id="braise"><div class="ft rv"><div><span class="tag"><svg class="i"><use href="#fish"/></svg> Autres plats</span><h3 style="margin:10px 0">Poissons braisés</h3><p style="color:var(--mut)">Tilapia, sosso ou sol, braisés à point et servis chauds.</p></div><div class="pr"><span data-c="15000">0</span> <small>FCFA</small></div></div></section>
@@ -116,13 +116,11 @@ const $=s=>document.querySelector(s),f=n=>n.toLocaleString('fr-FR').replace(/\s|
 const call=$('#call');call.href=`https://wa.me/${PHONE}`;
 addEventListener('load',()=>setTimeout(()=>$('#load').classList.add('off'),700));
 $('#mq').innerHTML=Array(2).fill(["Poulet","Bœuf","Porc","Mouton","Poissons braisés","Cocktails"].map(t=>`${t} <b>✦</b>`).join(' ')).join(' ').repeat(2);
-let mut=0;const g=$('#grid');
-g.innerHTML=P.map((p,i)=>`<article class="cb rv" style="transition-delay:${(i%4)*.08}s"><div class="n">${String(i+1).padStart(2,'0')}</div><div class="pp"><svg class="i"><use href="#users"/></svg>Pour ${i+1} personne${i?'s':''}</div><ul>${ING.map(x=>`<li><svg class="i" style="font-size:14px"><use href="#check"/></svg>${x}</li>`).join('')}</ul><div class="pr"><span data-p="${i}">${f(p[0])}</span> <small>FCFA</small></div><a class="btn g" target="_blank" rel="noopener" data-o="${i}">Commander <svg class="i"><use href="#arrow"/></svg></a></article>`).join('');
+const g=$('#grid');
+g.innerHTML=P.map((p,i)=>`<article class="cb rv" style="transition-delay:${(i%4)*.08}s"><div class="n">${String(i+1).padStart(2,'0')}</div><div class="pp"><svg class="i"><use href="#users"/></svg>Pour ${i+1} personne${i?'s':''}</div><ul>${ING.map(x=>`<li><svg class="i" style="font-size:14px"><use href="#check"/></svg>${x}</li>`).join('')}</ul><div class="pr"><span data-c="${p[0]}">0</span> <small>FCFA</small></div><div class="pm"><svg class="i"><use href="#flame"/></svg>Avec mouton : <b data-c="${p[1]}">0</b> <small>FCFA</small></div><div class="ob"><a class="btn g" target="_blank" rel="noopener" data-o="${i}" data-m="0">Classique</a><a class="btn g" target="_blank" rel="noopener" data-o="${i}" data-m="1">Avec mouton</a></div></article>`).join('');
 function cnt(el,to,d=900){const from=+el.dataset.v||0;el.dataset.v=to;const t0=performance.now();(function s(t){const k=Math.min(1,(t-t0)/d),e=1-Math.pow(1-k,3);el.textContent=f(Math.round(from+(to-from)*e));k<1&&requestAnimationFrame(s)})(t0)}
-function upd(){document.querySelectorAll('[data-p]').forEach(e=>cnt(e,P[e.dataset.p][mut],600));document.querySelectorAll('[data-o]').forEach(a=>{const i=+a.dataset.o;a.href=`https://wa.me/${PHONE}?text=${encodeURIComponent(`Bonjour, je souhaite commander le Combo ${i+1} (${i+1} pers.) ${mut?'avec mouton':'classique'} - ${f(P[i][mut])} FCFA`)}`})}
-function pill(b){const p=$('.pill');p.style.left=b.offsetLeft+'px';p.style.width=b.offsetWidth+'px'}
-document.querySelectorAll('#tg button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#tg button').forEach(x=>x.classList.remove('on'));b.classList.add('on');mut=+b.dataset.m;pill(b);upd()});
-addEventListener('load',()=>pill($('#tg .on')));addEventListener('resize',()=>pill($('#tg .on')));upd();
+function upd(){document.querySelectorAll('[data-o]').forEach(a=>{const i=+a.dataset.o,m=+a.dataset.m;a.href=`https://wa.me/${PHONE}?text=${encodeURIComponent(`Bonjour, je souhaite commander le Combo ${i+1} (${i+1} pers.) ${m?'avec mouton':'classique'} - ${f(P[i][m])} FCFA`)}`})}
+upd();
 g.querySelectorAll('.cb').forEach(c=>{c.onmousemove=e=>{const r=c.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;c.style.setProperty('--x',x+'px');c.style.setProperty('--y',y+'px');c.style.transform=`rotateY(${(x/r.width-.5)*8}deg) rotateX(${-(y/r.height-.5)*8}deg) translateY(-6px)`};c.onmouseleave=()=>c.style.transform=''});
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');e.target.querySelectorAll('[data-c]').forEach(x=>cnt(x,+x.dataset.c,1400));io.unobserve(e.target)}}),{threshold:.15});document.querySelectorAll('.rv').forEach(e=>io.observe(e));
 const keys=Object.keys(DRINKS);let cur=keys[0];
