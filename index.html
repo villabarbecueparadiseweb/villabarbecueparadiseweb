@@ -2,7 +2,7 @@
 <html lang="fr"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Villa Barbecue Paradise — Carte</title>
-<meta name="description" content="Villa Barbecue Paradise : combos grillades de 1 à 10 personnes, poissons braisés, cocktails et boissons.">
+<meta name="description" content="Villa Barbecue Paradise : entrées, combos grillades de 1 à 10 personnes, menu enfants, desserts, cocktails et boissons.">
 <meta name="theme-color" content="#0c0907">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
@@ -20,7 +20,7 @@ svg.i{width:1em;height:1em;stroke:currentColor;fill:none;stroke-width:1.7;stroke
 nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:16px 5vw;transition:.4s}
 nav.s{background:rgba(12,9,7,.85);backdrop-filter:blur(14px);padding:10px 5vw;border-bottom:1px solid var(--line)}
 .logo{font:800 1.15rem 'Playfair Display';letter-spacing:.04em;color:var(--txt);text-decoration:none;display:flex;gap:8px;align-items:center}.logo svg{color:var(--ember)}
-nav ul{display:flex;gap:28px;list-style:none}nav a{color:var(--mut);text-decoration:none;font-weight:500;font-size:.92rem;transition:.3s}nav a:hover,nav a.on{color:var(--gold)}
+nav ul{display:flex;gap:22px;list-style:none}nav a{color:var(--mut);text-decoration:none;font-weight:500;font-size:.92rem;transition:.3s}nav a:hover,nav a.on{color:var(--gold)}
 .btn{display:inline-flex;gap:8px;align-items:center;padding:14px 28px;border-radius:99px;font-weight:700;text-decoration:none;border:1px solid var(--ember);color:#fff;background:var(--ember);cursor:pointer;transition:.35s;font-family:inherit;font-size:.95rem;position:relative;overflow:hidden}
 .btn:hover{box-shadow:0 10px 40px rgba(255,90,31,.45);transform:translateY(-3px)}.btn.g{background:transparent;color:var(--txt);border-color:var(--line)}.btn.g:hover{border-color:var(--gold);color:var(--gold);box-shadow:none}
 #bg{position:absolute;inset:0;width:100%;height:100%}
@@ -46,6 +46,14 @@ section{padding:110px 5vw;position:relative;z-index:2;max-width:1300px;margin:au
 .cb ul{list-style:none;margin-bottom:22px;flex:1}.cb li{font-size:.88rem;color:var(--mut);padding:5px 0;border-bottom:1px dashed var(--line);display:flex;gap:9px;align-items:center}.cb li svg{color:var(--ember);flex:none}
 .pr{font:800 2rem 'Playfair Display';margin-bottom:14px}.pr small{font:500 .8rem Manrope;color:var(--mut)}.cb .btn{justify-content:center;padding:12px}
 .pm{display:flex;gap:8px;align-items:center;color:var(--gold);font-weight:700;font-size:.92rem;margin:-6px 0 18px}.pm svg{color:var(--ember)}.pm b{font:800 1.4rem 'Playfair Display';color:var(--txt)}.pm small{font:500 .75rem Manrope;color:var(--mut)}.ob{display:grid;grid-template-columns:1fr 1fr;gap:8px}.cb .ob .btn{padding:11px 6px;font-size:.8rem}
+.gr{font-style:italic;background:linear-gradient(100deg,var(--gold),var(--ember));-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.08em}
+.orn{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:6px}.orn::before,.orn::after{content:"";width:60px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}.orn::after{transform:scaleX(-1)}.orn span,.orn i{display:none}
+.ml{max-width:860px;margin:auto}
+.mi{display:flex;justify-content:space-between;align-items:baseline;gap:24px;padding:22px 8px;border-bottom:1px solid var(--line);transition:padding .35s,background .35s,border-color .35s,opacity 1s,transform 1s}
+.mi:hover{padding-left:20px;background:linear-gradient(90deg,rgba(255,90,31,.09),transparent);border-color:rgba(242,180,87,.4)}
+.mi h4{font:600 1.35rem 'Playfair Display',serif;line-height:1.2}.mi p{color:var(--mut);font-size:.85rem;font-style:italic;margin-top:2px}
+.mi b{color:var(--gold);font:600 1.2rem 'Playfair Display',serif;white-space:nowrap}.mi b small{font:500 .7rem Manrope,sans-serif;color:var(--mut)}
+.kids{grid-template-columns:repeat(auto-fit,minmax(260px,340px));justify-content:center}
 .ft{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center;background:linear-gradient(120deg,#2a0f05,var(--card));border:1px solid var(--line);border-radius:26px;padding:44px;margin-top:20px}.ft h3{font-size:2.2rem}.ft .pr{text-align:right;font-size:3rem}
 .tabs{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:34px}.tabs button{background:none;border:1px solid var(--line);color:var(--mut);padding:10px 22px;border-radius:99px;cursor:pointer;font:700 .88rem Manrope;transition:.3s}.tabs button.on,.tabs button:hover{border-color:var(--gold);color:var(--gold)}
 .dr{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}.di{display:flex;justify-content:space-between;gap:14px;padding:18px 22px;background:var(--card);border:1px solid var(--line);border-radius:16px;animation:pop .5s both;transition:.3s}.di:hover{border-color:var(--ember);transform:translateX(6px)}
@@ -64,10 +72,11 @@ footer{text-align:center;padding:70px 5vw 40px;border-top:1px solid var(--line);
 <symbol id="phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.500 1.500a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
 <symbol id="info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v.1M12 11v5"/></symbol>
 <symbol id="fish" viewBox="0 0 24 24"><path d="M2 12c4-6 11-6 15 0-4 6-11 6-15 0zM17 12l5-4v8zM7 11v.1"/></symbol>
+<symbol id="smile" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.5 14a4 4 0 0 0 7 0M9 9.5v.1M15 9.5v.1"/></symbol>
 </defs></svg>
 <div id="load"><svg class="i"><use href="#flame"/></svg></div><div id="bar"></div><div id="glow"></div>
 <nav id="nav"><a class="logo" href="#top"><svg class="i"><use href="#flame"/></svg>VILLA BARBECUE PARADISE</a>
-<ul><li><a href="#combos">Combos</a></li><li><a href="#braise">Poissons</a></li><li><a href="#bar-sec">Bar</a></li><li><a href="#contact">Contact</a></li></ul></nav>
+<ul><li><a href="#combos">Combos</a></li><li><a href="#braise">Poissons</a></li><li><a href="#entrees">Entrées</a></li><li><a href="#enfants">Enfants</a></li><li><a href="#dessert">Desserts</a></li><li><a href="#bar-sec">Bar</a></li><li><a href="#contact">Contact</a></li></ul></nav>
 
 <header class="hero" id="top"><canvas id="bg"></canvas><div>
 <span class="tag"><svg class="i"><use href="#flame"/></svg> Grillades au feu de braise</span>
@@ -82,6 +91,12 @@ footer{text-align:center;padding:70px 5vw 40px;border-top:1px solid var(--line);
 
 <section id="braise"><div class="ft rv"><div><span class="tag"><svg class="i"><use href="#fish"/></svg> Autres plats</span><h3 style="margin:10px 0">Poissons braisés</h3><p style="color:var(--mut)">Tilapia, sosso ou sol, braisés à point et servis chauds.</p></div><div class="pr"><span data-c="15000">0</span> <small>FCFA</small></div></div></section>
 
+<section id="entrees"><div class="hd rv"><span class="tag">Pour commencer</span><h2>Nos <em class="gr">Entrées</em></h2><div class="orn"></div></div><div class="ml" id="starters"></div></section>
+
+<section id="enfants"><div class="hd rv"><span class="tag"><svg class="i"><use href="#smile"/></svg> Pour les petits</span><h2>Menu <em class="gr">Enfants</em></h2><div class="orn"></div></div><div class="grid kids" id="kids"></div></section>
+
+<section id="dessert"><div class="hd rv"><span class="tag">Pour finir</span><h2>Nos <em class="gr">Desserts</em></h2><div class="orn"></div></div><div class="ml" id="dessert-list"></div></section>
+
 <section id="bar-sec"><div class="hd rv"><span class="tag">Menu du bar</span><h2>Cocktails &amp; Boissons</h2></div>
 <div class="tabs rv" id="tabs"></div><div class="tabs sub" id="sub"></div><p class="note" id="leg" style="margin:0 0 18px">T = tournée · B = bouteille (FCFA)</p><div class="dr" id="dr"></div>
 <p class="note"><svg class="i"><use href="#info"/></svg>Les boissons alcoolisées sont servies uniquement aux adultes de 18 ans et plus.</p></section>
@@ -93,6 +108,9 @@ footer{text-align:center;padding:70px 5vw 40px;border-top:1px solid var(--line);
 const PHONE="2250717070532"; // numéro WhatsApp, format international sans +
 const P=[[20,30],[35,49],[55,69],[70,89],[90,109],[110,129],[130,149],[150,169],[170,189],[190,209]].map(a=>a.map(v=>v*1000));
 const ING=["Cuisses de poulet","Ailes de poulet","Saucisse de bœuf","Côtes de bœuf","Côtes de porc (au choix)","Œufs","Pommes de terre","Maïs (selon la saison)"];
+const STARTERS=[["Salade composée","Carotte, concombre, thon, œufs durs, tomate, oignon, laitue, maïs doux.",6000],["Salade niçoise","Tomate, oignon, haricots verts, œufs, thon, olives noires.",7000],["Tarte d’avocat aux crevettes","Laitue, avocat, crevettes, sauce cocktail (mayonnaise + ketchup).",9000],["Calamars panés","Tendres anneaux de calamars dorés, sauce citron.",6000],["Crevettes panées","Crevettes croustillantes, sauce tartare maison.",6000]];
+const DESSERTS=[["Pain Perdu","Doré au beurre, caramel maison, glace vanille",6500],["Glaces","Sélection du moment",2000],["Salade de Fruits","Fruits frais de saison, coulis de fruits rouges",4000],["Crêpes nature","",3000]];
+const KIDS=[{n:"Combo enfant 1",items:["Poulet braisé","Accompagnement au choix : frites, alloco ou attiéké"],p:5000},{n:"Combo enfant 2",items:["Saucisse de bœuf braisée","Riz cantonais","Dessert inclus"],p:5000}];
 const DRINKS={
 "Cocktails":{
 "Alcoolisés":[["Mojito","Virgin / Orange / Passion / Ananas / Bissap, Rhum",8500],["Long Island","Vodka, gin, tequila, rhum, citron, coca",9500],["Blue Lagon","Vodka, curaçao bleu, passion, orange, citron",7500],["Pink Lemon","Citron, rhum, grenadine, citron",7500],["Cosmopolitano","Vodka, cointreau, cranberry, citron",7500],["Daiquiri","Rhum, citron vert, sucre de canne",6500],["Margarita","Tequila, cointreau, citron",7500],["Vodka Daysi","Vodka, citron, grenadine, soda",7500],["Gin Frizz","Gin, sucre de canne, citron, sprite",7500],["Sexy Bailey's","Bailey's, gin, citron",7500],["Mai Tai","Rhum blanc, rhum ambré, triple sec, sucre de canne, citron",8500]],
@@ -118,10 +136,14 @@ addEventListener('load',()=>setTimeout(()=>$('#load').classList.add('off'),700))
 $('#mq').innerHTML=Array(2).fill(["Poulet","Bœuf","Porc","Mouton","Poissons braisés","Cocktails"].map(t=>`${t} <b>✦</b>`).join(' ')).join(' ').repeat(2);
 const g=$('#grid');
 g.innerHTML=P.map((p,i)=>`<article class="cb rv" style="transition-delay:${(i%4)*.08}s"><div class="n">${String(i+1).padStart(2,'0')}</div><div class="pp"><svg class="i"><use href="#users"/></svg>Pour ${i+1} personne${i?'s':''}</div><ul>${ING.map(x=>`<li><svg class="i" style="font-size:14px"><use href="#check"/></svg>${x}</li>`).join('')}</ul><div class="pr"><span data-c="${p[0]}">0</span> <small>FCFA</small></div><div class="pm"><svg class="i"><use href="#flame"/></svg>Avec mouton : <b data-c="${p[1]}">0</b> <small>FCFA</small></div><div class="ob"><a class="btn g" target="_blank" rel="noopener" data-o="${i}" data-m="0">Classique</a><a class="btn g" target="_blank" rel="noopener" data-o="${i}" data-m="1">Avec mouton</a></div></article>`).join('');
+const mrow=(d,i)=>`<div class="mi rv" style="transition-delay:${i*.07}s"><div><h4>${d[0]}</h4>${d[1]?`<p>${d[1]}</p>`:''}</div><b><span data-c="${d[2]}">0</span> <small>FCFA</small></b></div>`;
+$('#starters').innerHTML=STARTERS.map(mrow).join('');
+$('#dessert-list').innerHTML=DESSERTS.map(mrow).join('');
+$('#kids').innerHTML=KIDS.map((k,i)=>`<article class="cb rv" style="transition-delay:${i*.1}s"><div class="n">${String(i+1).padStart(2,'0')}</div><div class="pp"><svg class="i"><use href="#smile"/></svg>${k.n}</div><ul>${k.items.map(x=>`<li><svg class="i" style="font-size:14px"><use href="#check"/></svg>${x}</li>`).join('')}</ul><div class="pr"><span data-c="${k.p}">0</span> <small>FCFA</small></div><a class="btn g" target="_blank" rel="noopener" href="https://wa.me/${PHONE}?text=${encodeURIComponent(`Bonjour, je souhaite commander le ${k.n} - ${f(k.p)} FCFA`)}">Commander <svg class="i"><use href="#arrow"/></svg></a></article>`).join('');
 function cnt(el,to,d=900){const from=+el.dataset.v||0;el.dataset.v=to;const t0=performance.now();(function s(t){const k=Math.min(1,(t-t0)/d),e=1-Math.pow(1-k,3);el.textContent=f(Math.round(from+(to-from)*e));k<1&&requestAnimationFrame(s)})(t0)}
 function upd(){document.querySelectorAll('[data-o]').forEach(a=>{const i=+a.dataset.o,m=+a.dataset.m;a.href=`https://wa.me/${PHONE}?text=${encodeURIComponent(`Bonjour, je souhaite commander le Combo ${i+1} (${i+1} pers.) ${m?'avec mouton':'classique'} - ${f(P[i][m])} FCFA`)}`})}
 upd();
-g.querySelectorAll('.cb').forEach(c=>{c.onmousemove=e=>{const r=c.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;c.style.setProperty('--x',x+'px');c.style.setProperty('--y',y+'px');c.style.transform=`rotateY(${(x/r.width-.5)*8}deg) rotateX(${-(y/r.height-.5)*8}deg) translateY(-6px)`};c.onmouseleave=()=>c.style.transform=''});
+document.querySelectorAll('.cb').forEach(c=>{c.onmousemove=e=>{const r=c.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;c.style.setProperty('--x',x+'px');c.style.setProperty('--y',y+'px');c.style.transform=`rotateY(${(x/r.width-.5)*8}deg) rotateX(${-(y/r.height-.5)*8}deg) translateY(-6px)`};c.onmouseleave=()=>c.style.transform=''});
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');e.target.querySelectorAll('[data-c]').forEach(x=>cnt(x,+x.dataset.c,1400));io.unobserve(e.target)}}),{threshold:.15});document.querySelectorAll('.rv').forEach(e=>io.observe(e));
 const keys=Object.keys(DRINKS);let cur=keys[0];
 function tb(box,list,fn){box.innerHTML=list.map((k,i)=>`<button class="${i?'':'on'}">${k}</button>`).join('');box.querySelectorAll('button').forEach(b=>b.onclick=()=>{box.querySelectorAll('button').forEach(x=>x.classList.remove('on'));b.classList.add('on');fn(b.textContent)})}
