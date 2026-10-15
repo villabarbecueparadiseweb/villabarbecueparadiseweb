@@ -2,7 +2,7 @@
 <html lang="fr"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Villa Barbecue Paradise — Carte</title>
-<meta name="description" content="Villa Barbecue Paradise : entrées, combos grillades de 1 à 10 personnes, menu enfants, desserts, cocktails et boissons.">
+<meta name="description" content="Villa Barbecue Paradise : entrées, combos grillades de 1 à 10 personnes, desserts, menu enfants, cocktails et boissons.">
 <meta name="theme-color" content="#0c0907">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
@@ -76,7 +76,7 @@ footer{text-align:center;padding:70px 5vw 40px;border-top:1px solid var(--line);
 </defs></svg>
 <div id="load"><svg class="i"><use href="#flame"/></svg></div><div id="bar"></div><div id="glow"></div>
 <nav id="nav"><a class="logo" href="#top"><svg class="i"><use href="#flame"/></svg>VILLA BARBECUE PARADISE</a>
-<ul><li><a href="#combos">Combos</a></li><li><a href="#braise">Poissons</a></li><li><a href="#entrees">Entrées</a></li><li><a href="#enfants">Enfants</a></li><li><a href="#dessert">Desserts</a></li><li><a href="#bar-sec">Bar</a></li><li><a href="#contact">Contact</a></li></ul></nav>
+<ul><li><a href="#combos">Combos</a></li><li><a href="#braise">Poissons</a></li><li><a href="#entrees">Entrées</a></li><li><a href="#dessert">Desserts</a></li><li><a href="#enfants">Enfants</a></li><li><a href="#bar-sec">Bar</a></li><li><a href="#contact">Contact</a></li></ul></nav>
 
 <header class="hero" id="top"><canvas id="bg"></canvas><div>
 <span class="tag"><svg class="i"><use href="#flame"/></svg> Grillades au feu de braise</span>
@@ -93,9 +93,9 @@ footer{text-align:center;padding:70px 5vw 40px;border-top:1px solid var(--line);
 
 <section id="entrees"><div class="hd rv"><span class="tag">Pour commencer</span><h2>Nos <em class="gr">Entrées</em></h2><div class="orn"></div></div><div class="ml" id="starters"></div></section>
 
-<section id="enfants"><div class="hd rv"><span class="tag"><svg class="i"><use href="#smile"/></svg> Pour les petits</span><h2>Menu <em class="gr">Enfants</em></h2><div class="orn"></div></div><div class="grid kids" id="kids"></div></section>
-
 <section id="dessert"><div class="hd rv"><span class="tag">Pour finir</span><h2>Nos <em class="gr">Desserts</em></h2><div class="orn"></div></div><div class="ml" id="dessert-list"></div></section>
+
+<section id="enfants"><div class="hd rv"><span class="tag"><svg class="i"><use href="#smile"/></svg> Pour les petits</span><h2>Menu <em class="gr">Enfants</em></h2><div class="orn"></div></div><div class="grid kids" id="kids"></div></section>
 
 <section id="bar-sec"><div class="hd rv"><span class="tag">Menu du bar</span><h2>Cocktails &amp; Boissons</h2></div>
 <div class="tabs rv" id="tabs"></div><div class="tabs sub" id="sub"></div><p class="note" id="leg" style="margin:0 0 18px">T = tournée · B = bouteille (FCFA)</p><div class="dr" id="dr"></div>
@@ -127,7 +127,7 @@ const DRINKS={
 "Softs":{
 "Sodas":[["Redbull",3000],["Sanbitter",2000],["Cody's energy",2000],["Coca cola / Sprite / Orangina / Ivorio / Fanta",1500],["Malta",2000]],
 "Eaux":[["Eau Minérale",1500],["Perrier",2500],["San Pellegrino",2000],["Volvic",2500]],
-"Bières":[["Heineken",2000],["Beaufort",2000],["Desperados",2000],["Guinness",2000],["Doppel Munich",1500],["Budweiser",2000],["Corona",2000],["Cody's bière",2000]],
+"Bières":[["Heineken",2000],["Beaufort",2000],["Desperados",2000],["Guinness",2500],["Doppel Munich",1500],["Budweiser",2000],["Corona",2000],["Cody's bière",2000]],
 "Jus & Boissons chaudes":[["Jus naturel",2000],["Jus",1500],["Capucinno",2000],["Thé",1000],["Expresso",1500],["Café au lait",2000]]}};
 /* ================================= */
 const $=s=>document.querySelector(s),f=n=>n.toLocaleString('fr-FR').replace(/\s|\u202f/g,'.');
