@@ -117,13 +117,19 @@ const DRINKS={
 "Virgins":[["Mojito","Virgin / Orange / Passion / Ananas / Bissap",5000],["Hawaï","Multifruits (ananas, orange, pomme...), sirop citron / grenadine / menthe",5000],["Bora Bora","Jus ananas, jus passion, jus citron, grenadine, fruits de saison",5000],["Pina Colada","Jus ananas, lait de coco, sirop de canne",5000],["The Pêche","Pêche, citron vert, sprite, sucre",5000],["More to Come","Ananas, mangue, passion, fraise, lait",5000],["Golden Garden","Mangue, orange, grenadine",5000],["Milkshake","Oreo, kinder bueno, chocolat, fraise",5000]],
 "Signature":[["Diamant Bleu","Rhum, curaçao bleu, passion, orange, citron",8500],["Soleil","Gin, menthe, citron vert, jus d'orange",8500]]},
 "Spiritueux":{
-"Whisky":[["Jack Daniel's Single Barrel",6000,40000],["Jack Daniel's",5000,35000],["Jack Daniel's Gentleman",7000,45000],["Johnny Walker — Red Label",4000,25000],["Johnny Walker — Black Label",5000,35000],["Double Black",6000,40000],["Chivas",6000,40000],["Clan Campbell",4000,25000]],
+"Whisky":[["Jack Daniel's Single Barrel",6000,40000],["Jack Daniel's",5000,35000],["Jack Daniel's Gentleman",7000,45000],["Johnny Walker — Red Label",4000,30000],["Johnny Walker — Black Label",5000,35000],["Double Black",6000,40000],["Chivas",6000,40000],["Clan Campbell",4000,25000]],
 "Rhum":[["Diplomatico",10000,65000],["Havana Club",5000,35000],["Bacardi",5000,35000],["Saint James",4000,25000],["Rhum Café",4000,25000]],
-"Cognac":[["Hennessy VS",7000,45000],["Remy Martin VSOP",7000,45000],["Martell VS",7000,45000],["Camus VSOP",7000,45000]],
+"Cognac":[["Hennessy VS",7000,50000],["Remy Martin VSOP",7000,45000],["Martell VS",7000,45000],["Camus VSOP",7000,45000],["Hennessy 37,5 cl",null,30000]],
 "Gin":[["Bombay Blue Sapphire",4000,30000],["Citadelle",3000,25000],["Gordon's",4000,25000]],
 "Vodka & Tequila":[["Grey Goose",6000,40000],["Absolut",5000,30000],["Ciroc",6000,40000],["Smirnoff",4000,20000],["Omelca",5000,25000],["Patron Silver",5000,35000]],
 "Liqueurs & Crèmes":[["Jagermeister",5000,35000],["Pastis",5000,30000],["Baileys",5000,30000],["Martini",4000,25000],["Amarula",5000,35000]],
 "Shots":[["1 Shot",1000],["5 Shots",3000]]},
+"Vins":{
+"Rouges":[["St Estève Boutenac",50000],["St Estève Corbières",27000],["Guigal Côtes du Rhône",27000],["Château Grand Gaumont Corbières",21000],["Domaine Grand Gaumont Cabernet",21000],["St Pierre Grenache Noir",15000],["Bordeaux Petit Mazeret",15000],["Château Gasquerie Bordeaux",15000]],
+"Rosé & Porto":[["St Pierre Rosé",15000],["Porto Ruby",22500]],
+"Blancs":[["Mademoiselle Juliette Blanc Moelleux",18000],["Duc de Vigny Blanc Moelleux",18000],["Côtes du Roussillon Blanc Chardonnay",18000]],
+"Mousseux":[["Senac sans alcool",18000],["Prosecco",25000],["Baron d’Arignac Ice",18000],["Baron d’Arignac Demi-sec",16000]],
+"Champagnes":[["Champagne Lerigny 37,5 cl",25000],["Champagne Christian Maude",60000]]},
 "Softs":{
 "Sodas":[["Redbull",3000],["Sanbitter",2000],["Cody's energy",2000],["Coca cola / Sprite / Orangina / Ivorio / Fanta",1500],["Malta",2000]],
 "Eaux":[["Eau Minérale",1500],["Perrier",2500],["San Pellegrino",2000],["Volvic",2500]],
@@ -147,9 +153,9 @@ document.querySelectorAll('.cb').forEach(c=>{c.onmousemove=e=>{const r=c.getBoun
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');e.target.querySelectorAll('[data-c]').forEach(x=>cnt(x,+x.dataset.c,1400));io.unobserve(e.target)}}),{threshold:.15});document.querySelectorAll('.rv').forEach(e=>io.observe(e));
 const keys=Object.keys(DRINKS);let cur=keys[0];
 function tb(box,list,fn){box.innerHTML=list.map((k,i)=>`<button class="${i?'':'on'}">${k}</button>`).join('');box.querySelectorAll('button').forEach(b=>b.onclick=()=>{box.querySelectorAll('button').forEach(x=>x.classList.remove('on'));b.classList.add('on');fn(b.textContent)})}
-function row(d,i){const sp=d.length==3&&typeof d[1]=='number';const ds=d.length==3&&!sp;return `<div class="di" style="animation-delay:${i*.05}s"><span>${d[0]}${ds?`<small>${d[1]}</small>`:''}</span><b>${sp?`<em>T</em> ${f(d[1])} <em>B</em> ${f(d[2])}`:f(d[d.length-1])}</b></div>`}
+function row(d,i){const bo=d.length==3&&d[1]===null,sp=d.length==3&&typeof d[1]=='number',ds=d.length==3&&!sp&&!bo;return `<div class="di" style="animation-delay:${i*.05}s"><span>${d[0]}${ds?`<small>${d[1]}</small>`:''}</span><b>${sp?`<em>T</em> ${f(d[1])} <em>B</em> ${f(d[2])}`:bo?`<em>B</em> ${f(d[2])}`:f(d[d.length-1])}</b></div>`}
 function show(sub){$('#dr').innerHTML=DRINKS[cur][sub].map(row).join('')}
-function main(k){cur=k;const subs=Object.keys(DRINKS[k]);tb($("#sub"),subs,show);show(subs[0]);$('#leg').style.display=k=='Spiritueux'?'block':'none'}
+function main(k){cur=k;const subs=Object.keys(DRINKS[k]);tb($("#sub"),subs,show);show(subs[0]);const L={Spiritueux:'T = tournée · B = bouteille (FCFA)',Vins:'Prix à la bouteille (FCFA)'}[k];$('#leg').style.display=L?'block':'none';if(L)$('#leg').textContent=L}
 tb($("#tabs"),keys,main);main(cur);
 const nav=$('#nav'),links=[...document.querySelectorAll('nav a[href^="#"]:not(.logo)')];
 addEventListener('scroll',()=>{const h=document.documentElement;$('#bar').style.width=scrollY/(h.scrollHeight-innerHeight)*100+'%';nav.classList.toggle('s',scrollY>60);links.forEach(a=>{const s=$(a.hash);a.classList.toggle('on',s.getBoundingClientRect().top<innerHeight/2&&s.getBoundingClientRect().bottom>innerHeight/2)})},{passive:true});
