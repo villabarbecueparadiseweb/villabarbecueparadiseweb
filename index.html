@@ -77,7 +77,6 @@ footer{text-align:center;padding:70px 5vw 40px;border-top:1px solid var(--line);
 <div id="load"><svg class="i"><use href="#flame"/></svg></div><div id="bar"></div><div id="glow"></div>
 <nav id="nav"><a class="logo" href="#top"><svg class="i"><use href="#flame"/></svg>VILLA BARBECUE PARADISE</a>
 <ul><li><a href="#combos">Combos</a></li><li><a href="#braise">Poissons</a></li><li><a href="#entrees">Entrées</a></li><li><a href="#dessert">Desserts</a></li><li><a href="#enfants">Enfants</a></li><li><a href="#bar-sec">Bar</a></li><li><a href="#contact">Contact</a></li></ul></nav>
-
 <header class="hero" id="top"><canvas id="bg"></canvas><div>
 <span class="tag"><svg class="i"><use href="#flame"/></svg> Grillades au feu de braise</span>
 <h1><span class="w"><span style="animation-delay:.3s">Villa</span></span> <span class="w"><span style="animation-delay:.45s">Barbecue</span></span><em><span class="w"><span style="animation-delay:.7s">Paradise</span></span></em></h1>
@@ -85,29 +84,21 @@ footer{text-align:center;padding:70px 5vw 40px;border-top:1px solid var(--line);
 <div class="row"><a class="btn" href="#combos">Voir les combos <svg class="i"><use href="#arrow"/></svg></a><a class="btn g" href="#bar-sec">Menu du bar</a></div></div>
 <svg class="i scroll" style="font-size:28px"><use href="#down"/></svg></header>
 <div class="mq"><div id="mq"></div></div>
-
 <section id="combos"><div class="hd rv"><span class="tag">Formules signature</span><h2>Nos Combos</h2><p>Chaque combo contient la même sélection complète, ajustée à la taille de votre table. Ajoutez le mouton pour passer au niveau supérieur.</p></div>
 <div class="grid" id="grid"></div></section>
-
 <section id="braise"><div class="ft rv"><div><span class="tag"><svg class="i"><use href="#fish"/></svg> Autres plats</span><h3 style="margin:10px 0">Poissons braisés</h3><p style="color:var(--mut)">Tilapia, sosso ou sol, braisés à point et servis chauds.</p></div><div class="pr"><span data-c="15000">0</span> <small>FCFA</small></div></div></section>
-
 <section id="entrees"><div class="hd rv"><span class="tag">Pour commencer</span><h2>Nos <em class="gr">Entrées</em></h2><div class="orn"></div></div><div class="ml" id="starters"></div></section>
-
 <section id="dessert"><div class="hd rv"><span class="tag">Pour finir</span><h2>Nos <em class="gr">Desserts</em></h2><div class="orn"></div></div><div class="ml" id="dessert-list"></div></section>
-
 <section id="enfants"><div class="hd rv"><span class="tag"><svg class="i"><use href="#smile"/></svg> Pour les petits</span><h2>Menu <em class="gr">Enfants</em></h2><div class="orn"></div></div><div class="grid kids" id="kids"></div></section>
-
 <section id="bar-sec"><div class="hd rv"><span class="tag">Menu du bar</span><h2>Cocktails &amp; Boissons</h2></div>
 <div class="tabs rv" id="tabs"></div><div class="tabs sub" id="sub"></div><p class="note" id="leg" style="margin:0 0 18px">T = tournée · B = bouteille (FCFA)</p><div class="dr" id="dr"></div>
 <p class="note"><svg class="i"><use href="#info"/></svg>Les boissons alcoolisées sont servies uniquement aux adultes de 18 ans et plus.</p></section>
-
 <footer id="contact"><h3>Réservez votre table</h3><p>Commandez ou réservez directement par appel ou WhatsApp.</p><br><a class="btn" id="call" href="#"><svg class="i"><use href="#phone"/></svg>Nous contacter</a><br><br><small>Carte sujette à modification sans préavis · © Villa Barbecue Paradise</small></footer>
-
 <script>
 /* ===== CONFIG : modifiez ici ===== */
 const PHONE="2250717070532"; // numéro WhatsApp, format international sans +
 const P=[[20,30],[35,49],[55,69],[70,89],[90,109],[110,129],[130,149],[150,169],[170,189],[190,209]].map(a=>a.map(v=>v*1000));
-const ING=["Pilons de poulet","Ailes de poulet","Saucisse de bœuf","Côtes de bœuf","Côtes de porc (au choix)","Œufs","Pommes de terre","Maïs (selon la saison)"];
+const ING=["Pilons de poulet","Hauts de cuisse de poulet","Saucisse de bœuf","Côtes de bœuf","Côtes de porc (au choix)","Œufs","Pommes de terre","Maïs (selon la saison)"];
 const STARTERS=[["Salade composée","Carotte, concombre, thon, œufs durs, tomate, oignon, laitue, maïs doux.",6000],["Salade niçoise","Tomate, oignon, haricots verts, œufs, thon, olives noires.",7000],["Tarte d’avocat aux crevettes","Laitue, avocat, crevettes, sauce cocktail (mayonnaise + ketchup).",9000]];
 const DESSERTS=[["Pain Perdu","Doré au beurre, caramel maison, glace vanille",6500],["Glaces","Sélection du moment",2000],["Salade de Fruits","Fruits frais de saison, coulis de fruits rouges",4000],["Crêpes nature","",3000]];
 const KIDS=[{n:"Combo enfant 1",items:["Poulet braisé","Accompagnement au choix : frites, alloco ou attiéké"],p:5000},{n:"Combo enfant 2",items:["Saucisse de bœuf braisée","Riz cantonais"],p:5000}];
